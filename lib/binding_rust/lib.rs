@@ -4117,27 +4117,27 @@ impl error::Error for LanguageError {}
 #[cfg_attr(docsrs, doc(cfg(feature = "std")))]
 impl error::Error for QueryError {}
 
-#[cfg(not(target_family = "wasm"))]
+#[cfg(any(not(target_family = "wasm"), target_os = "emscripten"))]
 unsafe impl Send for Language {}
-#[cfg(not(target_family = "wasm"))]
+#[cfg(any(not(target_family = "wasm"), target_os = "emscripten"))]
 unsafe impl Sync for Language {}
 
 unsafe impl Send for Node<'_> {}
 unsafe impl Sync for Node<'_> {}
 
-#[cfg(not(target_family = "wasm"))]
+#[cfg(any(not(target_family = "wasm"), target_os = "emscripten"))]
 unsafe impl Send for LookaheadIterator {}
-#[cfg(not(target_family = "wasm"))]
+#[cfg(any(not(target_family = "wasm"), target_os = "emscripten"))]
 unsafe impl Sync for LookaheadIterator {}
 
-#[cfg(not(target_family = "wasm"))]
+#[cfg(any(not(target_family = "wasm"), target_os = "emscripten"))]
 unsafe impl Send for LookaheadNamesIterator<'_> {}
-#[cfg(not(target_family = "wasm"))]
+#[cfg(any(not(target_family = "wasm"), target_os = "emscripten"))]
 unsafe impl Sync for LookaheadNamesIterator<'_> {}
 
-#[cfg(not(target_family = "wasm"))]
+#[cfg(any(not(target_family = "wasm"), target_os = "emscripten"))]
 unsafe impl Send for Parser {}
-#[cfg(not(target_family = "wasm"))]
+#[cfg(any(not(target_family = "wasm"), target_os = "emscripten"))]
 unsafe impl Sync for Parser {}
 
 unsafe impl Send for Query {}
